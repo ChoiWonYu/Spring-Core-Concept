@@ -11,6 +11,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class RateDiscountPolicyTest {
 
+
     RateDiscountPolicy rateDiscountPolicy=new RateDiscountPolicy();
 
     @Test
