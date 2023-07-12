@@ -4,6 +4,11 @@ public class MemberServiceImpl implements MemberService{
 
     private final MemberRepository memberRepository;
 
+    //테스트용 코드
+    public MemberRepository getMemberRepository(){
+        return this.memberRepository;
+    }
+
     public MemberServiceImpl(MemberRepository memberRepository) {
         this.memberRepository = memberRepository;
     }
