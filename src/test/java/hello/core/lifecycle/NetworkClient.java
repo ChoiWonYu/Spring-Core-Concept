@@ -1,5 +1,7 @@
 package hello.core.lifecycle;
 
+import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
 import lombok.Setter;
 
 @Setter
@@ -25,11 +27,13 @@ public class NetworkClient {
     System.out.println("close " + url);
   }
 
+  @PostConstruct
   public void close() {
     call("빈이 종료됩니다.");
     disconnect();
   }
 
+  @PreDestroy
   public void init() {
     connect();
     call("초기화 메세지");
