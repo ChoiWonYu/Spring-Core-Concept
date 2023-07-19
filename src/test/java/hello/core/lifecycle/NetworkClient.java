@@ -1,11 +1,9 @@
 package hello.core.lifecycle;
 
 import lombok.Setter;
-import org.springframework.beans.factory.DisposableBean;
-import org.springframework.beans.factory.InitializingBean;
 
 @Setter
-public class NetworkClient implements InitializingBean, DisposableBean {
+public class NetworkClient {
 
   private String url;
 
@@ -27,14 +25,12 @@ public class NetworkClient implements InitializingBean, DisposableBean {
     System.out.println("close " + url);
   }
 
-  @Override
-  public void destroy() throws Exception {
+  public void close() {
     call("빈이 종료됩니다.");
     disconnect();
   }
 
-  @Override
-  public void afterPropertiesSet() throws Exception {
+  public void init() {
     connect();
     call("초기화 메세지");
   }
